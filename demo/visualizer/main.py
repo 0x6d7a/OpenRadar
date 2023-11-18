@@ -39,9 +39,9 @@ numAngleBins = 64
 range_resolution, bandwidth = dsp.range_resolution(numADCSamples)
 doppler_resolution = dsp.doppler_resolution(bandwidth)
 
-plotRangeDopp = True  
-plot2DscatterXY = False  
-plot2DscatterXZ = False  
+plotRangeDopp = False  
+plot2DscatterXY = True  
+plot2DscatterXZ = False
 plot3Dscatter = False  
 plotCustomPlt = False
 
@@ -227,24 +227,24 @@ if __name__ == '__main__':
                 axes[0].set_ylabel('Range')
                 axes[0].set_xlim(left=-4, right=4)
                 axes[0].set_xlabel('Azimuth')
-                axes[0].grid(b=True)
+                axes[0].grid(visible=True)
 
                 axes[1].set_ylim(bottom=0, top=10)
                 axes[1].set_xlim(left=-4, right=4)
                 axes[1].set_xlabel('Azimuth')
-                axes[1].grid(b=True)
+                axes[1].grid(visible=True)
 
             elif plot2DscatterXZ:
                 axes[0].set_ylim(bottom=-5, top=5)
                 axes[0].set_ylabel('Elevation')
                 axes[0].set_xlim(left=-4, right=4)
                 axes[0].set_xlabel('Azimuth')
-                axes[0].grid(b=True)
+                axes[0].grid(visible=True)
 
                 axes[1].set_ylim(bottom=-5, top=5)
                 axes[1].set_xlim(left=-4, right=4)
                 axes[1].set_xlabel('Azimuth')
-                axes[1].grid(b=True)
+                axes[1].grid(visible=True)
 
             if plotMakeMovie and plot2DscatterXY:
                 ims.append((axes[0].scatter(xyzVec[0], xyzVec[1], c='r', marker='o', s=2),
